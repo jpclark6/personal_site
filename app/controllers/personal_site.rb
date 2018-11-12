@@ -5,6 +5,7 @@ class PersonalSite
     case env["PATH_INFO"]
     when '/' then index
     when '/about' then about
+    when '/blog/1' then blog_1
     when '/main.css' then css
     else
       error
@@ -17,6 +18,10 @@ class PersonalSite
 
   def self.about
     render_view('about.html')
+  end
+
+  def self.blog_1
+    render_view('blog_1.html')
   end
 
   def self.error
